@@ -17,6 +17,7 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 // Services
 import {CoursesService} from './services/courses.service';
+import { CoursesListComponent } from './courses-list/courses-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {CoursesService} from './services/courses.service';
     LessonsListComponent,
     LessonsCounterComponent,
     HomeComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    CoursesListComponent
   ],
   imports: [
     BrowserModule,
