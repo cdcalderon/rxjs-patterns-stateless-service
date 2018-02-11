@@ -11,6 +11,7 @@ export class CoursesService {
 
   findAllCourses(): Observable<Course[]>{
     return  this.db.list('courses')
+        .first()
         .do(console.log)
   }
 
@@ -21,6 +22,7 @@ export class CoursesService {
         limitToLast: 10
       }
     })
+    .first()
     .do(console.log);
   }
 
@@ -31,6 +33,7 @@ export class CoursesService {
         equalTo: courseUrl
       }
     })
+      .first().first()
       .map( data => data[0])
   }
 
@@ -41,6 +44,7 @@ export class CoursesService {
         equalTo: courseId
       }
     })
+      .first()
   }
 
 }
