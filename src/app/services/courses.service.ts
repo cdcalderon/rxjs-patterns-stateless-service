@@ -24,4 +24,23 @@ export class CoursesService {
     .do(console.log);
   }
 
+  findCurseByUrl(courseUrl: string): Observable<Course> {
+    return this.db.list('courses', {
+      query: {
+        orderByChild: 'url',
+        equalTo: courseUrl
+      }
+    })
+      .map( data => data[0])
+  }
+
+  findLessonsByCourse(courseId: string): Observable<Lesson[]> {
+    return this.db.list('lessons', {
+      query: {
+        orderByChild: 'courseId',
+        equalTo: courseId
+      }
+    })
+  }
+
 }
